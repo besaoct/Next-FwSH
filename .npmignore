@@ -1,0 +1,4 @@
+# Files and directories to exclude when publishing to npm
+node_modules/
+.next/
+.eslintrc.js
