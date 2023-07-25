@@ -12,7 +12,7 @@ export async function getPostData() {
     const fullPath = path.join(postsDirectory, `post.md`);
     const fileContents = fs.readFileSync(fullPath, 'utf8');
      
-     // use gray-matter to parse the post metadata section
+     // use gray-matter
     const matterResult = matter(fileContents);
     
 
@@ -20,12 +20,11 @@ export async function getPostData() {
         .use(html)
         .process(matterResult.content);
     
-    // const processedContent = await (matterResult.content);
-
+  
     const contentHtml = processedContent.toString();
-    const PostsWithHTML: Posts & { contentHtml: string } = {
+    const PostsWithHTML: { contentHtml: string } = {
         contentHtml,
     }
-    //combine the data with id
+
     return PostsWithHTML
 }
