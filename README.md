@@ -31,7 +31,6 @@ Greetings, fellow developers! 👋
 
 To add syntax highlighting in a post within a Next.js application using TypeScript and Tailwind CSS, follow these steps:
 
-
 ### Upadate package.json if needed
 
 Ensure that the necessary dependencies are installed in your Next.js project. Open the `package.json` file and make sure it includes the following dependencies:
@@ -124,9 +123,10 @@ export async function getPostData() {
 
 ### FormattedPost Component
 
-Create a React component named `FwSH.tsx` under the `{your directory to dist}/dist/` directory. This component will handle syntax highlighting using `highlight.js`.
+Create a React component named `FwSH.tsx` under the `{your directory to components}/compoents/` directory. This component will handle syntax highlighting using `highlight.js`.
 
 ```jsx
+
 'use client'
 import hljs from 'highlight.js/lib/core'
 import 'highlight.js/styles/ir-black.css'
@@ -283,9 +283,11 @@ const FwSH: React.FC<FwshProps> = ({ HTMLContent, defaults, className}) => {
 
   return (
     <div
-      className={` m-auto w-full ${defaults ? `prose prose-invert prose-pre:bg-transparent 
-      prose-hr:border-neutral-800 prose-pre:p-0 touch-pinch-zoom prose-pre:pt-4 prose-pre:-mt-4`
-        : `${className}` 
+      className={`m-auto w-full
+      ${defaults ? `prose prose-invert prose-pre:bg-transparent 
+      prose-hr:border-neutral-800 prose-pre:p-0 prose-pre:pt-4 prose-pre:-mt-4`
+        :
+        `${className}` 
       }
        
        `}>
@@ -304,7 +306,7 @@ export default FwSH;
 Update the `{your directory to post file}/{your post file name}.tsx` file to use the `FwSH` component and display the processed post content.
 
 ```jsx
-import FwSH from "{Path to dist}/dist/FwSH"
+import FwSH from "{Path to components}/components/FwSH"
 import { getPostData } from "{Path to utils}/utils/getPost"
 
 export default async function Home() {
@@ -327,7 +329,7 @@ export default async function Home() {
 To use other themes of highlight.js, find and change `highlight.js/styles/github-dark.css` in `FwSH.tsx` this to `highlight.js/styles/{theme name}.css`.
 
 Default styles using `<FwSH defaults ...` contains className: `prose prose-invert prose-pre:bg-transparent
-      prose-hr:border-neutral-800 prose-pre:p-0 touch-pinch-zoom prose-pre:pt-4 prose-pre:-mt-4`
+prose-hr:border-neutral-800 prose-pre:p-0 prose-pre:pt-4 prose-pre:-mt-4`
 
 If you don't want to use default className remove `defaults` from  `<FwSH defaults ...`  and add className like `<FwSH className={'tailwind class names'} ...` to apply your desired className.
 

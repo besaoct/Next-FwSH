@@ -154,9 +154,9 @@ const FwSH: React.FC<FwshProps> = ({ HTMLContent, defaults, className}) => {
 
   return (
     <div
-      className={`
+      className={`m-auto w-full
       ${defaults ? `prose prose-invert prose-pre:bg-transparent 
-      prose-hr:border-neutral-800 prose-pre:p-0 m-auto w-full touch-pinch-zoom prose-pre:pt-4 prose-pre:-mt-4`
+      prose-hr:border-neutral-800 prose-pre:p-0 prose-pre:pt-4 prose-pre:-mt-4`
         :
         `${className}` 
       }
