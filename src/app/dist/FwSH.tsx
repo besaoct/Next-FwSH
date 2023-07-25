@@ -127,14 +127,14 @@ const FwSH: React.FC<FwshProps> = ({ HTMLContent, defaults, className}) => {
   }, []);
   
   
-  const copyToClipboard = (text: string) => {
-    // const tempInput = document.createElement("textarea");
-    // tempInput.value = text;
-    // document.body.appendChild(tempInput);
-    // tempInput.select();
-   // document.execCommand("copy"); ->  marked as deprecated.
-    // document.body.removeChild(tempInput);
-    navigator.clipboard.writeText(text)
+  const copyToClipboard = async(text: string) => {
+ try {
+    await navigator.clipboard.writeText(text);
+    console.log("Text copied to clipboard!");
+  } catch (err) {
+    console.error("Failed to copy text:", err);
+  }
+
   };
 
   return (
