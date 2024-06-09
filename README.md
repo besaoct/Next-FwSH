@@ -12,7 +12,7 @@ Format markdown->html post content with Syntax Highlighting using highlight.js
  `
 
 ```bash
-git clone https://github.com/blackipie/Next-FwSH.git 
+git clone https://github.com/besaoct/Next-FwSH.git 
 ```
 
 --------
