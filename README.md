@@ -31,7 +31,7 @@ Greetings, fellow developers! 👋
 
 To add syntax highlighting in a post within a Next.js application using TypeScript and Tailwind CSS, follow these steps:
 
-### Upadate package.json if needed
+### Update package.json if needed
 
 Ensure that the necessary dependencies are installed in your Next.js project. Open the `package.json` file and make sure it includes the following dependencies:
 
